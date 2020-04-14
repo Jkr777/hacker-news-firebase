@@ -1,0 +1,13 @@
+.btns__auth-btn {
+  outline: none;
+  border: 0.1rem solid $color1;
+  padding: 0.5rem 1.5rem;
+  background-color: $color5;
+  cursor: pointer;
+  transition: all 2ms ease-in;
+}
+
+.btns__auth-btn:active {
+  box-shadow: inset 0 0 1rem $color3;
+  border: none;
+}

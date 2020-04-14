@@ -1,0 +1,53 @@
+// header
+.header-container {
+  position: sticky;
+  top: 0;
+}
+
+.nav {
+  background-color: $color3;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+  &__link {
+    color: $color1;
+    text-decoration: none;
+    margin: 0 1rem;
+    &--title {
+      font-weight: bold;
+    }
+  }
+  &__link--right {
+    color: $color1;
+    text-decoration: none;
+  }
+}
+
+// auth
+
+.auth-container {
+  background-color: $color4;
+  padding: 1rem;
+  &__title {
+    font-size: 2.8rem;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    .form__input {
+      border: none;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem 0.5rem;
+    }
+  }
+  .btns {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}

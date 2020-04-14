@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import Header from './components/header';
+import Login from './pages/login';
+import useAuth from './costumHook/useAuth';
+// test
+import Auth from './prev/auth';
 
-function App() {
+const App = () => {
+  const user = useAuth(); // invoc fn hook
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Switch>
+        <Route path="/" component={Auth} exact />
+        <Route path="/prevLogin" component={Auth} exact />
+        <Route path="/login" component={Login} exact />
+        <Redirect to="/" />
+      </Switch>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

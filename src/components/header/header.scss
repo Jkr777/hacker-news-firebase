@@ -1,0 +1,27 @@
+.header-container {
+  position: sticky;
+  top: 0;
+}
+
+.nav {
+  background-color: $color3;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+  &__link {
+    color: $color1;
+    text-decoration: none;
+    margin: 0 1rem;
+    &--title {
+      font-weight: bold;
+    }
+  }
+  &__link--right {
+    color: $color1;
+    text-decoration: none;
+  }
+}
