@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import Input from '../../components/input';
 import Button from '../../components/button';
 import useFormValidation from '../../costumHook/useFormValidation';
-import { firebase } from "../../firebase"; // importam instanta creata in care avem metodele de auth
+import { firebase } from "../../firebase"; 
 
 const INITIAL_STATE = {
   email: "",
@@ -33,7 +34,7 @@ const Login = props => {
       {error && <p className="auth-container__error">{error}</p>}
       <form className="auth-container__form" onSubmit={handleSubmit}>
         <Input 
-          iType={"text"}
+          iType={"email"}
           iName={"email"}
           iValue={values.email}
           iPlaceholder={"email"}
@@ -85,6 +86,9 @@ const Login = props => {
             </button>
         </div>
       </form>
+      <div>
+        <Link to="/reset" className="reset">forgot your password ?</Link>
+      </div>
     </section>
   )
 };

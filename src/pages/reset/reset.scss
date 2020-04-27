@@ -1,0 +1,6 @@
+.reset-container {
+  @extend %container;
+  &__error{
+    @extend %error;
+  }
+}

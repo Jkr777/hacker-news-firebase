@@ -1,8 +1,7 @@
 .auth-container {
-  background-color: $color4;
-  padding: 1rem;
+  @extend %container;
   &__error {
-    color: $color6;
+    @extend %error;
   }
   &__title {
     font-size: 2.8rem;
@@ -12,9 +11,13 @@
     flex-direction: column;
     width: 80%;
     .btns {
-      margin-top: 1rem;
+      margin: 1rem 0;
       display: flex;
       justify-content: space-between;
     }
   }
+}
+
+.reset {
+  color: $color7;
 }

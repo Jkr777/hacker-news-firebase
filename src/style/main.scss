@@ -1,9 +1,12 @@
-@import './utils/var.scss';
+@import './utils/var';
+@import './utils/extends';
 @import '../components/header/header.scss';
 @import '../components/input/input.scss';
 @import '../components/button/button.scss';
 @import '../pages/login/login.scss';
+@import '../pages/reset/reset.scss';
+@import '../pages/createLink/createLink.scss';
 // test
-// @import '../prev/auth.scss';
+// @import '../prev/test.scss';
 // test
 @import './base/base.scss';
