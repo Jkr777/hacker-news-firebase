@@ -6,3 +6,9 @@
 %error {
   color: $color6;
 }
+
+%form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}

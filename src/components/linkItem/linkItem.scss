@@ -1,0 +1,34 @@
+.link-container {
+  border-bottom: solid $color2 0.2rem;
+}
+
+.link-top {
+  display: flex;
+  &__count {
+    color: $color8;
+    &__vote-btn {
+      cursor: pointer;
+    }
+  }
+  &__url {
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: baseline;
+    &__description {
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+    }
+    &__link {
+      color: $color8;
+      margin-left: 0.5rem;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.link-bottom {
+  position: relative;
+  top: -0.2rem;
+  color: $color8;
+  font-size: 1.6rem;
+}

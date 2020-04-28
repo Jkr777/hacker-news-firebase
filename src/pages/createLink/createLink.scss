@@ -1,3 +1,7 @@
 .createLink-container {
   @extend %container;
 }
+
+.createLink__form {
+  @extend %form;
+}

@@ -12,12 +12,12 @@ const Header = () => {
       <nav className="nav">
         <div className="nav__left">
           <Logo />
-          <NavLink to='/' className="nav__link nav__link--title"> News News </NavLink>
-          <NavLink to='/' className="nav__link"> new </NavLink>
+          <NavLink to='/links' className="nav__link nav__link--title"> News News </NavLink>
+          <NavLink to='/create' className="nav__link"> new </NavLink>
           <span>|</span>
-          <NavLink to='/' className="nav__link"> top </NavLink>
+          <NavLink to='/top' className="nav__link"> top </NavLink>
           <span>|</span>
-          <NavLink to='/' className="nav__link"> search </NavLink>
+          <NavLink to='/search' className="nav__link"> search </NavLink>
           <span>|</span>
           <NavLink to='/' className="nav__link"> submit </NavLink>
         </div>
