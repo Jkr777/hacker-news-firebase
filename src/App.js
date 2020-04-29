@@ -8,6 +8,8 @@ import useAuth from './costumHook/useAuth';
 import Reset from "./pages/reset";
 import CreateLink from "./pages/createLink";
 import Links from "./pages/links";
+import Search from "./pages/search";
+import Link from "./pages/link";
 
 // test
 import Test from './prev';
@@ -23,7 +25,9 @@ const App = () => {
           <Route path="/login" component={Login} exact />
           <Route path="/reset" component={Reset} exact />
           <Route path="/create" component={CreateLink} exact />
-          <Route path="/top" component={Links} />
+          <Route path="/link/:id" component={Link} exact />
+          <Route path="/search" component={Search} exact />
+          <Route path="/top" component={Links} exact />
           {/* <Route path="/prev" component={Test} exact /> */}
           <Redirect to="/links" />
         </Switch>

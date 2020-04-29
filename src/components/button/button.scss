@@ -5,6 +5,9 @@
   background-color: $color5;
   cursor: pointer;
   transition: all 2ms ease-in;
+  &--comment {
+    width: 30%;
+  }
 }
 
 .btns__auth-btn:active {
@@ -17,4 +20,8 @@
   color: $color6;
   cursor: pointer;
   background-color: $color4;
+}
+
+.commentBtn {
+
 }

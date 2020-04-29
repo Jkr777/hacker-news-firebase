@@ -17,6 +17,11 @@
     &__description {
       font-weight: bold;
       letter-spacing: 0.1rem;
+      text-decoration: none;
+      color: $color1;
+    }
+    &__description:hover {
+      color: $color8;
     }
     &__link {
       color: $color8;

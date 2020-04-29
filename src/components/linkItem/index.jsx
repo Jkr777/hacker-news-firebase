@@ -38,11 +38,11 @@ const LinkIntem = ({ link, count, history }) => {
     <div className="link-container">
       <div className="link-top">
         <div className="link-top__count">
-          <span>{count}.</span>
+          {count && <span>{count}.</span>}
           <span className="link-top__count__vote-btn" onClick={handleVote}>&#9650;</span>
         </div>
         <div className="link-top__url">
-          <span className="link-top__url__description">{link.description}</span>
+          <a href={link.link} className="link-top__url__description">{link.description}</a>
           <span className="link-top__url__link">({formatDomain(link.link)})</span>
         </div>
       </div>

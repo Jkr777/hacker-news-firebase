@@ -1,0 +1,12 @@
+.comm-container {
+  @extend %container;
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.comments {
+  background-color: $color2;
+  margin-top: 0.5rem;
+}
