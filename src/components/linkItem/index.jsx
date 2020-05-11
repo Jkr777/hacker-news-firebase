@@ -17,7 +17,8 @@ const LinkIntem = ({ link, count, history }) => {
           const prevVotes = doc.data().votes; 
           const newVote = { votedBy: { id: user.uid, username: user.displayName } };
           const newVotes = [...prevVotes, newVote];
-          voteRef.update({ votes: newVotes }) 
+          const voteCount = newVotes.length;
+          voteRef.update({ votes: newVotes, voteCount }); 
         } 
       }) 
     }
@@ -47,7 +48,7 @@ const LinkIntem = ({ link, count, history }) => {
         </div>
       </div>
       <div className="link-bottom">
-        {link.votes.length} votes by {link.postedBy.username} {formatDistanceToNow(link.created)}
+        {link.voteCount} votes by {link.postedBy.username} {formatDistanceToNow(link.created)} ago
         {" | "}
         <Link to={`/link/${link.id}`}>
           {link.comments.length > 0

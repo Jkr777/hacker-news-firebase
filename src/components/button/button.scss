@@ -22,6 +22,19 @@
   background-color: $color4;
 }
 
-.commentBtn {
+.paginationBtn {
+  outline: none;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border: 0.1rem solid $color1;
+  color: $color1;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 2ms ease-in;
+}
 
+.paginationBtn:hover {
+  border: none;
+  background-color: $color2;
+  
 }

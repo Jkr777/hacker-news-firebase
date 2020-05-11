@@ -25,6 +25,7 @@ const CreateLink = props => {
           id: user.uid,
           username: user.displayName
         },
+        voteCount: 0,
         votes: [],
         comments: [],
         created: Date.now()

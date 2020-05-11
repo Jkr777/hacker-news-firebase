@@ -2,3 +2,8 @@
   @extend %container;
 }
 
+.pagination-container {
+  padding: 1rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}

@@ -21,7 +21,8 @@ const App = () => {
       <FirebaseContext.Provider value={{ user, firebase }}> 
         <Header />
         <Switch>
-          <Route path="/links" component={Links} exact />
+          <Route path="/" render={() => <Redirect to="/links/1" />} exact />
+          <Route path="/links/:page" component={Links} exact />
           <Route path="/login" component={Login} exact />
           <Route path="/reset" component={Reset} exact />
           <Route path="/create" component={CreateLink} exact />
@@ -29,7 +30,7 @@ const App = () => {
           <Route path="/search" component={Search} exact />
           <Route path="/top" component={Links} exact />
           {/* <Route path="/prev" component={Test} exact /> */}
-          <Redirect to="/links" />
+          <Redirect to="/links/1" />
         </Switch>
       </FirebaseContext.Provider>
     </BrowserRouter>

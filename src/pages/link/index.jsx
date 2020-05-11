@@ -66,7 +66,7 @@ const Link = ({ match, history }) => {
       </div>
       {link.comments.map((comm, i) => (
         <div key={i} className="comments">
-          <p>{comm.postedBy.username} | {formatDistanceToNow(comm.created)}</p>
+          <p className="comments__username">{comm.postedBy.username} | {formatDistanceToNow(comm.created)} ago </p>
           <p>{comm.text}</p>
         </div>
       ))}
