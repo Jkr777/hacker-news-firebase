@@ -8,6 +8,7 @@ const Links = ({ location, match, history }) => {
   const { firebase } = useContext(FirebaseContext); 
   const [links, setLinks] = useState([]);
   const [cursor, setCursor] = useState(null); 
+  const [loading, setLoading] = useState(false);
   const pageNr = Number(match.params.page); 
   const topPage = location.pathname.includes("top");
   const linksPage = location.pathname.includes("links");
@@ -18,6 +19,7 @@ const Links = ({ location, match, history }) => {
   }, [topPage, pageNr]);  
 
   function fetchLinks() {
+    setLoading(true);
     if(topPage) { 
       return firebase.db.collection("links").orderBy("voteCount", "desc").limit(LINKS_NR).onSnapshot(handleLinks);
     } else if(pageNr === 1) {
@@ -32,6 +34,7 @@ const Links = ({ location, match, history }) => {
           const lastLink = links[links.length - 1];
           setLinks(links); 
           setCursor(lastLink);
+          setLoading(false);
         }); 
       return () => {};
     }
@@ -44,6 +47,7 @@ const Links = ({ location, match, history }) => {
     setLinks(links);
     const lastLink = links[links.length - 1]; 
     setCursor(lastLink); 
+    setLoading(false);
   } 
 
   function handlePagination(action) {
@@ -59,7 +63,7 @@ const Links = ({ location, match, history }) => {
   const pageIndex = pageNr ?(pageNr - 1) * LINKS_NR + 1 : 1;
 
   return (
-    <div className="links-container">
+    <div className="links-container" style={{opacity: loading ? 0.2 : 1}}>
       {links.map((link, i) => (
         <LinkIntem 
           key={link.id}
