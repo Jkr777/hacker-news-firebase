@@ -11,9 +11,6 @@ import Links from "./pages/links";
 import Search from "./pages/search";
 import Link from "./pages/link";
 
-// test
-import Test from './prev';
-
 const App = () => {
   const user = useAuth(); 
   return (
@@ -29,7 +26,6 @@ const App = () => {
           <Route path="/link/:id" component={Link} exact />
           <Route path="/search" component={Search} exact />
           <Route path="/top" component={Links} exact />
-          {/* <Route path="/prev" component={Test} exact /> */}
           <Redirect to="/links/1" />
         </Switch>
       </FirebaseContext.Provider>

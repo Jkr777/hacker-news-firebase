@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import FirebaseContext from "../../context";
 import LinkIntem from "../../components/linkItem";
 import { LINKS_NR } from "../../utils";
+import axios from "axios";
 
 const Links = ({ location, match, history }) => {
   const { firebase } = useContext(FirebaseContext); 
@@ -23,9 +24,18 @@ const Links = ({ location, match, history }) => {
       return firebase.db.collection("links").orderBy("created", "desc").limit(LINKS_NR).onSnapshot(handleLinks);
     } else if(cursor) {
       return firebase.db.collection("links").orderBy("created", "desc").startAfter(cursor.created).limit(LINKS_NR).onSnapshot(handleLinks);
-
+    } else {
+      const offset = pageNr * LINKS_NR - LINKS_NR;
+      axios.get(`https://us-central1-hacker-news-like.cloudfunctions.net/pagination?offset=${offset}`) 
+        .then(res => {
+          const links = res.data;
+          const lastLink = links[links.length - 1];
+          setLinks(links); 
+          setCursor(lastLink);
+        }); 
+      return () => {};
     }
-  }
+  } 
 
   function handleLinks(snapshot) {
     const links  = snapshot.docs.map(link => {
