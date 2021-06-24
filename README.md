@@ -1,4 +1,4 @@
-just a demo app, I tried to see how I can use firebase
+just a demo app, using firebase and react.js
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
