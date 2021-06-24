@@ -10,12 +10,10 @@ const db = admin.firestore();
 
 exports.pagination = functions.https.onRequest((request, response) => {
   response.set('Access-Control-Allow-Origin', '*');
-  response.set('Access-Control-Allow-Methods', 'GET');
-  response.set('Access-Control-Allow-Headers', '*');
-  
+
   const offset = Number(request.query.offset);
   let linksRef = db.collection('links');
-  linksRef.orderBy("created", "desc").startAfter(cursor.created).limit(LINKS_NR).offset(offset).get().then(snapShot => {
+  linksRef.orderBy("created", "desc").limit(LINKS_NR).offset(offset).get().then(snapShot => {
     const links = snapShot.docs.map(doc => {
       return { id: doc.id, ...doc.data() }
     });

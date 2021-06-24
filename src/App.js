@@ -12,7 +12,7 @@ import Search from "./pages/search";
 import Link from "./pages/link";
 
 const App = () => {
-  const user = useAuth(); 
+  const user = useAuth();
   return (
     <BrowserRouter>
       <FirebaseContext.Provider value={{ user, firebase }}> 
